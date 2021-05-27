@@ -11,7 +11,7 @@ export default function RowPost({ title, small, endpoint }) {
         axios.get(endpoint).then(res => {
             setMovies(res.data.results);
         });
-    }, [])
+    }, [endpoint]);
 
     return (
         <div className="row">
