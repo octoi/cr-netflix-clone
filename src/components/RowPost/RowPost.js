@@ -1,7 +1,16 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
+import { apiKey, imgUrl } from '../../constants/constants';
+import axios from '../../axios';
 import './RowPost.css';
 
 export default function RowPost() {
+
+    useEffect(() => {
+        axios.get(`/discover/tv?api_key=${apiKey}&with_networks=213`).then(res => {
+            console.log(res.data)
+        });
+    }, [])
+
     return (
         <div className="row">
             <h2>Title</h2>
